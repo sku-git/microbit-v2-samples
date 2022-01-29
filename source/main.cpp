@@ -8,5 +8,5 @@ main()
     uBit.init();
 
     while(1)
-        uBit.display.scroll("HELLO WORLD!");
+        uBit.display.scroll("What Ho!");
 }
