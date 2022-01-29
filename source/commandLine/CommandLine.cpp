@@ -1,7 +1,7 @@
 
 #include <stdint.h>
 #include <algorithm>
-#include "commandLine.h"
+#include "CommandLine.h"
 
 #include "MicroBit.h"
 
@@ -12,7 +12,6 @@ using namespace appcommon;
 
 CommandLine::CommandLine()
 {
-
 }
 
 CommandLine::~CommandLine()
@@ -43,4 +42,18 @@ void CommandLine::showCommands()
         uBit.sleep(1000);
     }
 }
+
+
+bool CommandLine::processCommand(const char * cmd) 
+{
+    std::string cmd1(cmd);
+
+    for(size_t i = 0; i < entries.size(); i++)
+    {
+        entries.at(i)->process(&cmd1, 1);
+    }
+
+    return true;
+}
+
 
