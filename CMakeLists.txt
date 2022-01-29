@@ -202,6 +202,9 @@ set(LIB_FOLDERS "")
 MESSAGE (STATUS "Adding library path: (${PROJECT_SOURCE_DIR}/${LIB_DEST})")
 include_directories(${PROJECT_SOURCE_DIR}/${LIB_DEST})
 
+MESSAGE (STATUS "Adding extern libs (like Boost) library path: (${PROJECT_SOURCE_DIR}/extern)")
+include_directories(${PROJECT_SOURCE_DIR}/extern)
+
 #add_subdirectory("${PROJECT_SOURCE_DIR}/${LIB_DEST}/${dep}")
 
 # "import" and add any specified libraries to the build list
