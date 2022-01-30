@@ -1,6 +1,8 @@
 #ifndef __CMDTESTER_H__
 #define __CMDTESTER_H__
 
+#include <string>
+#include <vector>
 #include "CommandInterface.h"
 #include "CommandProcessor.h"
 
@@ -10,10 +12,10 @@ class CmdTester : public CommandHandler
 {
 private:
 public:
-    CmdTester(CommandProcessor * processor);
+    CmdTester(CommandProcessor* processor);
     ~CmdTester();
     CommandData* getEntry();
-    ProcessResponse process(std::string* cmds, uint8_t len);
+    ProcessResponse process(std::vector<std::string> tokens);
 };
 
 

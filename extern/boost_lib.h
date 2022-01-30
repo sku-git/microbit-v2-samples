@@ -2,6 +2,7 @@
 #define __BOOST_LIB_H__
 
 #include "boost/lexical_cast.hpp"
+#include "boost/algorithm/string.hpp"
 
 /**
  * @brief Exceptions for ARM targets regarding the handling of the exceptions

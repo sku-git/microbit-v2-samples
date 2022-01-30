@@ -1,6 +1,7 @@
 #ifndef __COMMANDLINE_H__
 #define __COMMANDLINE_H__
 
+#include <vector>
 #include <string>
 #include "CommandInterface.h"
 #include "CommandProcessor.h"
@@ -11,12 +12,12 @@ namespace appcommon
     {
     private:
         std::string * cmd;
+
     public:
         CommandLine();
         ~CommandLine();
         void showCommands();
         bool processCommand(const char *cmd);
-        
     };
 
 }

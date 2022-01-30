@@ -17,7 +17,7 @@ CommandData* CmdTester::getEntry()
     return nullptr;
 }
 
-ProcessResponse CmdTester::process(std::string* cmds, uint8_t len)
+ProcessResponse CmdTester::process(std::vector<std::string> tokens)
 {
     return ProcessResponse::COMMAND_ERROR;
 }

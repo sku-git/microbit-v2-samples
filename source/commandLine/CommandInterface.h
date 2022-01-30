@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <string>
+#include <vector>
 
 namespace appcommon
 {
@@ -25,7 +26,7 @@ namespace appcommon
     class CommandHandler {
     public:
         virtual CommandData* getEntry();
-        virtual ProcessResponse process(std::string* cmds, uint8_t len);
+        virtual ProcessResponse process(std::vector<std::string> cmds);
     };
 
 } // namespace appcommon

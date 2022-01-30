@@ -4,15 +4,21 @@
 int
 main()
 {
-    Engine * engine = Engine::getEngine().get();
+    Engine* engine = Engine::getEngine().get();
     engine->initialize();
 
     CmdTester tester(engine->getCli());
 
+    MicroBit* uBit = engine->getUBit();
+    uBit->display.scroll("What Ho Jeeves!");
     while (1)
     {
-        engine->getUBit()->display.scroll("What Ho Jeeves!");
-        engine->getCli()->processCommand("Test Command");
+        ManagedString cmd = uBit->serial.readUntil("\r\n", MicroBitSerialMode::ASYNC);
+        if (cmd.length() > 0)
+        {
+            // uBit->display.scroll("Sir!");
+            engine->getCli()->processCommand("Test Command");
+        }
     }
 }
 
